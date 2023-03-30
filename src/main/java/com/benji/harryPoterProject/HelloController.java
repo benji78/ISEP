@@ -1,4 +1,4 @@
-package com.benji.harrypoterproject;
+package com.benji.harryPoterProject;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
