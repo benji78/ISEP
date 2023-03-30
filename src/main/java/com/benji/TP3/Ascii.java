@@ -1,9 +1,7 @@
 package com.benji.TP3;
 
 public class Ascii {
-
     public static void drawCat(int height, int width) {
-
         // ears and top of the head
         System.out.println("|\\" + "-".repeat(width + 3) + "/|");
 

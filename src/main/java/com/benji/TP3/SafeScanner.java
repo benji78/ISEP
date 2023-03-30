@@ -1,6 +1,7 @@
 package com.benji.TP3;
 
 import java.io.InputStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SafeScanner {
@@ -18,7 +19,7 @@ public class SafeScanner {
             try {
                 input = this.scanner.nextInt();
                 isInt = true;
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Veuillez saisir un entier");
                 this.scanner.nextLine();
             }
