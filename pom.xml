@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>main.java.com.harryPoterProject</groupId>
+    <groupId>main.java.com.harryPotterProject</groupId>
     <artifactId>ISEP</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1</version>
     <name>ISEP</name>
 
     <properties>
@@ -42,12 +42,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>13.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

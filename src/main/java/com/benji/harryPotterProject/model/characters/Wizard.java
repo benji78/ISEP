@@ -42,7 +42,11 @@ public class Wizard extends Character {
     private void applyHouseBuff() {
         switch (house) {
             // Gryffindor wizards are more resistant to damage
-            case GRYFFINDOR -> setMaxHealth(getMaxHealth() + 10);
+            case GRYFFINDOR -> {
+
+                setMaxHealth(getMaxHealth() + 10);
+                setHealth(getHealth() + 10);
+            }
             // Slytherin wizards deal more damage with spells
             case SLYTHERIN -> setAttackDamage(getAttackDamage() + 5);
             // Hufflepuff wizards are more effective with potions

@@ -1,9 +1,7 @@
-module main.java.com.benji.harrypoterproject {
+module main.java.com.benji.harrypotterproject {
     requires javafx.controls;
     requires javafx.fxml;
     requires lombok;
-    requires annotations;
-
 
     opens com.benji.harryPotterProject to javafx.fxml;
     exports com.benji.harryPotterProject;

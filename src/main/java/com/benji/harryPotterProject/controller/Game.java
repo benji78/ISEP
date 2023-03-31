@@ -7,7 +7,6 @@ import com.benji.harryPotterProject.model.characters.Wizard;
 import com.benji.harryPotterProject.view.Console;
 import com.benji.harryPotterProject.view.InputParser;
 import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 
 @Getter
 public class Game {
@@ -52,7 +51,7 @@ public class Game {
 
     }
 
-    private void battle(@NotNull Boss boss) {
+    private void battle(Boss boss) {
         boolean fighting = true;
         Console.print("You are fighting " + boss.getName() + "!");
         Console.print("They have " + boss.getHealth() + "/" + boss.getMaxHealth() + " health points.");
@@ -104,7 +103,7 @@ public class Game {
         gameFinished = true;
     }
 
-    private void getIntro(@NotNull House house) {
+    private void getIntro(House house) {
         Console.print("""
                 Never forget that!" says Hagrid as he waves goodbye.
 
