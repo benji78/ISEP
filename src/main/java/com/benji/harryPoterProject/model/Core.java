@@ -1,7 +1,10 @@
 package com.benji.harryPoterProject.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@AllArgsConstructor
+@Getter
 public enum Core {
     PHOENIX_FEATHER("phoenix feather"),
     DRAGON_HEARTSTRING("dragon heartstring"),
@@ -13,10 +16,5 @@ public enum Core {
     HORNED_SERPENT_HORN("horned serpent horn"),
     BASILISK_HORN("basilisk horn");
 
-    @Getter
     private final String name;
-
-    Core(String name) {
-        this.name = name;
-    }
 }

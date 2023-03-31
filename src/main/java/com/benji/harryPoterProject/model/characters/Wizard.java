@@ -16,13 +16,42 @@ public class Wizard extends Character {
     private List<Spell> knownSpells;
     private List<Potion> potions;
 
-    public Wizard() {
-        super(100, 10, 10);
-        wand = new Wand(Core.values()[(int) (Math.random() * Core.values().length)], (int) (Math.random() * 50));
-        pet = Pet.values()[(int) (Math.random() * Pet.values().length)];
+    public Wizard(String name, House house, Pet pet) {
+        super(name, 100, 100, 10, 10);
+        // create a wand with a random core and a length between 8 and 20 ((0 to 12)+8)
+        wand = new Wand(Core.values()[(int) (Math.random() * Core.values().length)], (int) (Math.random() * 13) + 8);
+        this.house = house;
+        this.pet = pet;
+        applyHouseBuff();
     }
 
-    public void defend() {
-        // TODO
+    @Override
+    public int attack(Character character, int attackDamage) {
+        character.takeDamage(attackDamage);
+        return 0;
     }
+
+    public int defend() {
+        return 0;
+    }
+
+    public int heal(int points) {
+        health = Math.min(getMaxHealth(), health + points);
+        return health;
+    }
+
+    private void applyHouseBuff() {
+        switch (house) {
+            // Gryffindor wizards are more resistant to damage
+            case GRYFFINDOR -> setMaxHealth(getMaxHealth() + 10);
+            // Slytherin wizards deal more damage with spells
+            case SLYTHERIN -> setAttackDamage(getAttackDamage() + 5);
+            // Hufflepuff wizards are more effective with potions
+//            case HUFFLEPUFF -> setPotionEffectiveness(getPotionEffectiveness() + 0.2);
+            // Ravenclaw wizards are more accurate with spells
+//            case RAVENCLAW -> setSpellAccuracy(getSpellAccuracy() + 0.1);
+//            @TODO
+        }
+    }
+
 }

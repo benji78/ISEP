@@ -6,10 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class AbstractEnemy extends Character {
-    private String name;
-
-    public AbstractEnemy(String name, int health, int defense, int attackDamage) {
-        super(health, defense, attackDamage);
-        this.name = name;
+    public AbstractEnemy(String name, int maxHealth, int health, int defense, int attackDamage) {
+        super(name, maxHealth, health, defense, attackDamage);
     }
 }

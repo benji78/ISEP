@@ -8,12 +8,16 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class Character {
-
-    private int health;
+    private String name;
+    private int maxHealth;
+    protected int health;
     private int defence;
     private int attackDamage;
 
-    public void attack(Character character) {
+    public abstract int attack(Character character, int attackDamage);
 
+    public int takeDamage(int points) {
+        health = Math.max(0, health - points);
+        return health;
     }
 }

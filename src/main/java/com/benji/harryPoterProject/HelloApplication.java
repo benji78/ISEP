@@ -13,6 +13,7 @@ public class HelloApplication extends Application {
 //        launch();
         Game game = new Game();
         game.start();
+//        System.exit(0);
     }
 
     @Override

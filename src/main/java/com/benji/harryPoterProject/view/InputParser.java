@@ -15,7 +15,7 @@ public class InputParser {
         return scanner.nextLine();
     }
 
-    public int getInt() {
+    public int getInt(int min, int max) {
         int input = 0;
         boolean isInt = false;
         do {
@@ -23,12 +23,14 @@ public class InputParser {
                 input = scanner.nextInt();
                 isInt = true;
             } catch (InputMismatchException e) {
-                System.out.println("Please enter an integer");
+                Console.print("Please enter an integer between " + min + " and " + max + " !");
                 scanner.nextLine();
             }
-        } while (!isInt);
+        } while (!isInt || input < min || input > max);
         return input;
     }
 
-
+    public void close() {
+        this.scanner.close();
+    }
 }

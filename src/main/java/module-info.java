@@ -2,6 +2,7 @@ module main.java.com.benji.harrypoterproject {
     requires javafx.controls;
     requires javafx.fxml;
     requires lombok;
+    requires annotations;
 
 
     opens com.benji.harryPoterProject to javafx.fxml;

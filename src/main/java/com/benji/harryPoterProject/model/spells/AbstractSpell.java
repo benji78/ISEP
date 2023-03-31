@@ -1,13 +1,13 @@
 package com.benji.harryPoterProject.model.spells;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+@AllArgsConstructor
 @Getter
 @Setter
 public abstract class AbstractSpell {
-
-    private String name;
-    private int energyCost;
-    private int damage;
+    private final String name;
+    private final int damage;
 }

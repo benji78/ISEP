@@ -9,5 +9,5 @@ import lombok.Setter;
 @Setter
 public class Wand {
     private Core core;
-    private int size;
+    private int length;
 }
