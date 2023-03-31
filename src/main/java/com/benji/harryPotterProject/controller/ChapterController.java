@@ -1,7 +1,7 @@
-package com.benji.harryPoterProject.controller;
+package com.benji.harryPotterProject.controller;
 
-import com.benji.harryPoterProject.model.Chapter;
-import com.benji.harryPoterProject.view.Console;
+import com.benji.harryPotterProject.model.Chapter;
+import com.benji.harryPotterProject.view.Console;
 import lombok.Getter;
 import lombok.Setter;
 

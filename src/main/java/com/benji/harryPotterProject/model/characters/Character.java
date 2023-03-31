@@ -1,4 +1,4 @@
-package com.benji.harryPoterProject.model.characters;
+package com.benji.harryPotterProject.model.characters;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

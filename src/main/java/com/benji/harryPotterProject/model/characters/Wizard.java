@@ -1,7 +1,7 @@
-package com.benji.harryPoterProject.model.characters;
+package com.benji.harryPotterProject.model.characters;
 
-import com.benji.harryPoterProject.model.*;
-import com.benji.harryPoterProject.model.spells.Spell;
+import com.benji.harryPotterProject.model.*;
+import com.benji.harryPotterProject.model.spells.Spell;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,9 +35,8 @@ public class Wizard extends Character {
         return 0;
     }
 
-    public int heal(int points) {
+    public void heal(int points) {
         health = Math.min(getMaxHealth(), health + points);
-        return health;
     }
 
     private void applyHouseBuff() {

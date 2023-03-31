@@ -1,6 +1,6 @@
-package com.benji.harryPoterProject.controller;
+package com.benji.harryPotterProject.controller;
 
-import com.benji.harryPoterProject.model.Potion;
+import com.benji.harryPotterProject.model.Potion;
 import lombok.Getter;
 
 import java.util.ArrayList;

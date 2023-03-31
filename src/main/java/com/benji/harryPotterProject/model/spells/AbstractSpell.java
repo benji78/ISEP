@@ -1,4 +1,4 @@
-package com.benji.harryPoterProject.model.spells;
+package com.benji.harryPotterProject.model.spells;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

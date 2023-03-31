@@ -73,7 +73,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.benji.harryPoterProject.HelloApplication
+                                com.benji.harryPotterProject.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
@@ -92,7 +92,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                com.benji.harryPoterProject.HelloApplication
+                                com.benji.harryPotterProject.HelloApplication
                             </mainClass>
                         </manifest>
                     </archive>

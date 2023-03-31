@@ -1,6 +1,6 @@
-package com.benji.harryPoterProject;
+package com.benji.harryPotterProject;
 
-import com.benji.harryPoterProject.controller.Game;
+import com.benji.harryPotterProject.controller.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

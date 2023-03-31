@@ -1,6 +1,6 @@
-package com.benji.harryPoterProject.model;
+package com.benji.harryPotterProject.model;
 
-import com.benji.harryPoterProject.model.characters.Boss;
+import com.benji.harryPotterProject.model.characters.Boss;
 import lombok.Getter;
 
 @Getter

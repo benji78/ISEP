@@ -1,11 +1,11 @@
-package com.benji.harryPoterProject.controller;
+package com.benji.harryPotterProject.controller;
 
-import com.benji.harryPoterProject.model.House;
-import com.benji.harryPoterProject.model.Pet;
-import com.benji.harryPoterProject.model.characters.Boss;
-import com.benji.harryPoterProject.model.characters.Wizard;
-import com.benji.harryPoterProject.view.Console;
-import com.benji.harryPoterProject.view.InputParser;
+import com.benji.harryPotterProject.model.House;
+import com.benji.harryPotterProject.model.Pet;
+import com.benji.harryPotterProject.model.characters.Boss;
+import com.benji.harryPotterProject.model.characters.Wizard;
+import com.benji.harryPotterProject.view.Console;
+import com.benji.harryPotterProject.view.InputParser;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 

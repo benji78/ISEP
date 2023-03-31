@@ -1,8 +1,8 @@
 package harryPotterProject;
 
-import com.benji.harryPoterProject.model.House;
-import com.benji.harryPoterProject.model.Pet;
-import com.benji.harryPoterProject.model.characters.Wizard;
+import com.benji.harryPotterProject.model.House;
+import com.benji.harryPotterProject.model.Pet;
+import com.benji.harryPotterProject.model.characters.Wizard;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

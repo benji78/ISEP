@@ -1,4 +1,4 @@
-package com.benji.harryPoterProject.model.characters;
+package com.benji.harryPotterProject.model.characters;
 
 public class Enemy extends AbstractEnemy {
     public Enemy(String name, int maxHealth, int health, int defense, int attackDamage) {

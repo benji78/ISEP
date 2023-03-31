@@ -1,4 +1,4 @@
-package com.benji.harryPoterProject.view;
+package com.benji.harryPotterProject.view;
 
 import lombok.Getter;
 

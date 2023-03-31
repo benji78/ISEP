@@ -1,5 +1,10 @@
-package com.benji.harryPoterProject.model.spells;
+package com.benji.harryPotterProject.model.spells;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ForbiddenSpell extends AbstractSpell {
     private String effect;
     private final int energyCost;
