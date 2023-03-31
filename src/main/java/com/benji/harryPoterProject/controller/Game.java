@@ -2,6 +2,7 @@ package com.benji.harryPoterProject.controller;
 
 import com.benji.harryPoterProject.model.House;
 import com.benji.harryPoterProject.model.Pet;
+import com.benji.harryPoterProject.model.characters.Boss;
 import com.benji.harryPoterProject.model.characters.Wizard;
 import com.benji.harryPoterProject.view.Console;
 import com.benji.harryPoterProject.view.InputParser;
@@ -12,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 public class Game {
     private final InputParser inputParser = new InputParser(System.in);
     private boolean gameFinished = false;
+    private Wizard player;
 
     public void start() {
         Console.print("Welcome to this Harry Potter RPG!");
@@ -26,7 +28,7 @@ public class Game {
             Console.print((i + 1) + ". " + Pet.values()[i]);
         }
         int pet = inputParser.getInt(1, Pet.values().length);
-        Wizard player = new Wizard(playerName, house, Pet.values()[pet - 1]);
+        player = new Wizard(playerName, house, Pet.values()[pet - 1]);
         Console.print("You are now the proud owner of a " + player.getPet().getName() + "!");
 
         Console.print("\nIt's now time for your future wand to choose you.");
@@ -34,10 +36,72 @@ public class Game {
 
         Console.print("\nYou are now ready to start the adventure!");
 
+        ChapterController chapterController = new ChapterController();
         do {
-            gameFinished = true;
+            Console.print("\n" + chapterController.getChapter().getName());
+            printMenu();
+            switch (Console.getInputParser().getInt(1, 3)) {
+                case 1 -> {
+                    battle(chapterController.getChapter().getBoss());
+                    gameFinished = chapterController.nextChapter(); // Check if player has finished the last chapter
+                }
+                case 2 -> playerInfo(player);
+                case 3 -> gameFinished = true;
+            }
         } while (!gameFinished);
 
+    }
+
+    private void battle(@NotNull Boss boss) {
+        boolean fighting = true;
+        Console.print("You are fighting " + boss.getName() + "!");
+        Console.print("They have " + boss.getHealth() + "/" + boss.getMaxHealth() + " health points.");
+        do {
+            Console.print("Choose an action:");
+            Console.print("1. Attack");
+            Console.print("2. Drink potion");
+
+            switch (Console.getInputParser().getInt(1, 2)) {
+                case 1 -> {
+                    boss.takeDamage(player.getAttackDamage());
+                    Console.print("You attacked " + boss.getName() + "!");
+                    Console.print(boss.getName() + " has " + boss.getHealth() + "/" + boss.getMaxHealth() + " health points left.");
+                }
+                case 2 -> {
+                    player.heal(20);
+                    Console.print("You drank a potion!");
+                    Console.print("You have " + player.getHealth() + "/" + player.getMaxHealth() + " health points left.");
+                }
+            }
+            if (boss.getHealth() == 0) {
+                Console.print("You defeated " + boss.getName() + "!");
+                Console.print("You advance to the next year!");
+                player.heal(player.getMaxHealth()); // Heal player to max health before next chapter
+                fighting = false;
+            } else {
+                Console.print(boss.getName() + " attacked you!");
+                if (player.takeDamage(boss.getAttackDamage()) == 0) {
+                    playerDied();
+                    fighting = false;
+                } else {
+                    Console.print("You have " + player.getHealth() + "/" + player.getMaxHealth() + " health points left.");
+                }
+            }
+        } while (fighting);
+    }
+
+    private void playerInfo(Wizard player) {
+        Console.print("You are a wizard!");
+        Console.print("You have " + player.getHealth() + "/" + player.getMaxHealth() + " health points.");
+        Console.print("You have " + player.getAttackDamage() + " attack damage.");
+        Console.print("You have " + player.getPotions().size() + " potions in your inventory.");
+    }
+
+    private void playerDied() {
+        Console.print("You died! Game over!");
+        Console.print("Hope you will do better next time!");
+        Console.closeParser();
+        gameFinished = true;
     }
 
     private void getIntro(@NotNull House house) {
@@ -63,5 +127,12 @@ public class Game {
         );
         Console.requestString("\nPress enter to continue...");
 
+    }
+
+    private void printMenu() {
+        Console.print("Choose an action :");
+        Console.print("1. Continue your journey");
+        Console.print("2. Get stats");
+        Console.print("3. Exit the game");
     }
 }
